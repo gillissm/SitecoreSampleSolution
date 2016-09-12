@@ -1,0 +1,51 @@
+#ignore thumbnails created by windows
+Thumbs.db
+#Ignore files build by Visual Studio
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.bak
+*.cache
+*.ilk
+*.log
+[Bb]in
+[Dd]ebug*/
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+*.dll
+*.nupkg
+#User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+# Visual Studio 2015 cache/options directory
+.vs/
+*.obj
+*.exe
+*.pdb
+*.tlb
+*.tlh
+*.lib
+[Tt]est[Rr]esult*
+packages/*

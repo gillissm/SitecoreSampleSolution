@@ -1,0 +1,55 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Analytics
+
+@model Sample.SiteA.Model.ViewModels.ViewRenderingPostViewModel
+
+<!-- Start JoinRegisterModalRendering -->
+<div id="ViewRenderingSamplePost" class="modal fade">
+    <!--Build the Route for the form. Assigning an ID so the submit button understands which form should submit. -->
+    @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post, new { id = "samplepostfrom" }))
+    {
+        <!-- Controller - Method -->
+        <!-- Sitecore().FormHandler produces the following HTML:
+            <input id="scController" name="scController" type="hidden" value="SamplePost" />
+            <input id="scAction" name="scAction" type="hidden" value="PostFromViewRendering" />
+
+            This can be manually configured as shown OR the Controller and Post method
+            can be defined in the Sitecore view artifact, allowing Sitecore to prepopulate the values. 
+
+            If you will populate from the Sitecore artifact then you will need to place the empty contructor call on the page:
+            Html.Sitecore().FormHandler()
+            -->
+        @Html.Sitecore().FormHandler("SamplePost", "PostFromViewRendering")
+
+        <p>Register Below</p>
+        <p>*Required Fields</p>
+
+        <div>
+            @Html.TextBoxFor(x => x.FirstName, new { @placeholder = "*First Name" })
+        </div>
+
+        @Html.ValidationMessageFor(x => x.FirstName, null, new { @class = "messages" })
+
+        <div>
+            @Html.TextBoxFor(x => x.LastName, new { @placeholder = "*Last Name" })
+        </div>
+
+        @Html.ValidationMessageFor(x => x.LastName, null, new { @class = "messages" })
+
+        <div>
+            @Html.TextBoxFor(x => x.Email, new { @placeholder = "*Email Address" })
+        </div>
+
+        @Html.ValidationMessageFor(x => x.Email, null, new { @class = "messages" })
+
+        <div class="submit">
+            @if (Html.ViewData.ModelState.ContainsKey("Custom Error Key") && Html.ViewData.ModelState["Custom Error Key"].Errors.Any(a => !string.IsNullOrWhiteSpace(a.ErrorMessage)))
+            {
+                @Html.ValidationMessage("Custom Error Key")
+            }
+            <input type="submit" value="Submit" class="submit-from" id="samplepostfrom" />
+        </div>
+    }
+
+</div>
