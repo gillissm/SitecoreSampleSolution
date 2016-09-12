@@ -67,7 +67,7 @@ namespace Sample.SiteA.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateFormHandler]
-        public ActionResult PostFromControlRendering(ControlRenderingPostViewModel pageModelInformation)
+        public ActionResult PostFromControllerRendering(ControllerRenderingPostViewModel pageModelInformation)
         {
             //Perform actions saving the information
             int errorCode = 0;

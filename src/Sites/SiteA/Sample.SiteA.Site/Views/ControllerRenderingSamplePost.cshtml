@@ -2,7 +2,7 @@
 @using Sitecore.Mvc.Presentation
 @using Sitecore.Analytics
 
-@model Sample.SiteA.Model.ViewModels.ViewRenderingPostViewModel
+@model Sample.SiteA.Model.ViewModels.ControllerRenderingPostViewModel
 
 <!-- Start JoinRegisterModalRendering -->
 <div id="ViewRenderingSamplePost" class="modal fade">
@@ -14,7 +14,7 @@
             <input id="scController" name="scController" type="hidden" value="SamplePost" />
             <input id="scAction" name="scAction" type="hidden" value="PostFromControlRendering" />
             -->
-        @Html.Sitecore().FormHandler("SamplePost", "PostFromControlRendering")
+        @Html.Sitecore().FormHandler("SamplePost", "PostFromControllerRendering")
 
         <p>Register Below</p>
         <p>*Required Fields</p>

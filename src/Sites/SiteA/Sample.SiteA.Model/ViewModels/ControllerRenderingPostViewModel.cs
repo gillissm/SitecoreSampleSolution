@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Sample.SiteA.Model.ViewModels
 {
-    public class ControlRenderingPostViewModel:RenderingModel
+    public class ControllerRenderingPostViewModel:RenderingModel
     {
         [Required(ErrorMessage = "First Name is required")]
         public string FirstName { get; set; }
